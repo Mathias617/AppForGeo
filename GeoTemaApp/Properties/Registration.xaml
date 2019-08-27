@@ -1,0 +1,20 @@
+﻿<Window x:Name="registForm" x:Class="GeoTemaApp.Properties.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeoTemaApp.Properties"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        Title="Registration" Height="463.5" Width="438.043">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="GeoTema" VerticalAlignment="Top" Height="54" Width="143" FontSize="36" FontFamily="Segoe UI Light" FontWeight="SemiBold"/>
+        <Image Margin="216,10,17,255" Source="/GeoTemaApp;component/1503446_561117573975529_477550962_n.png" Stretch="Fill" RenderTransformOrigin="0.51,0.496"/>
+        <wpfTool:WatermarkTextBox x:Name="usernameBox" Watermark="Username.." Margin="143,237,133,172" HorizontalAlignment="Center" Width="154" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <wpfTool:WatermarkPasswordBox x:Name="passwordBox" Watermark="Password..." Margin="143,266,0,0" Width="154" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <wpfTool:WatermarkTextBox x:Name="firstName" Watermark="First Name..." Margin="143,295,133,114"/>
+        <wpfTool:WatermarkTextBox x:Name="eMail" Watermark="E-Mail..." Margin="143,324,133,85" Height="24"/>
+        <Button x:Name="registerButt" Content="Register" HorizontalAlignment="Left" Margin="177,363,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.453,0.95" Click="RegisterButt_Click"/>
+
+    </Grid>
+</Window>
