@@ -20,6 +20,7 @@ namespace GeoTemaApp
 {
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,72 +34,174 @@ namespace GeoTemaApp
 
         }
 
+
+
         void Clear()
         {
             usernameBox.Text = passwordBox.Text = "";
         }
 
 
+
         private void LoginButt_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            try
+            foreach (ComboBoxItem i in EmployBox.Items)
             {
-                con.Open();
-                String query = "Select count(1) from Users WHERE Username=@Username And Passw = @Passw";
-                SqlCommand sqlCmd = new SqlCommand(query, con);
-                sqlCmd.CommandType = System.Data.CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Username", con);
-                sqlCmd.Parameters.AddWithValue("@Passw", con);
-                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if(count == 1)
+                if (EmployBox.SelectedIndex == 0)
                 {
-                    MainWindow dashboard = new MainWindow();
-                    dashboard.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Username eller Password er forkert!");
-                    Clear();
-                }
-            }
-            catch (Exception)
-            {
+                    try
+                    {
+                        con.Open();
+                        String Query = "select count(1) from Users WHERE Username= @Username and Passw = @Passw";
+                        SqlCommand sqlCommand = new SqlCommand(Query, con);
+                        sqlCommand.CommandType = System.Data.CommandType.Text;
+                        sqlCommand.Parameters.AddWithValue("@Username", con);
+                        sqlCommand.Parameters.AddWithValue("@Passw", con);
+                        int count = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                        if (count == 1)
+                        {
+                            MainWindow dashboard = new MainWindow();
+                            dashboard.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username eller Password er forkert!");
+                            Clear();
+                        }
 
-                MessageBox.Show("Du er nu logget ind!");
-                Clear();
-                dashboard dashObj = new dashboard();
-                dashObj.Show();
-                this.Close();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Du er logget ind!");
+                        Clear();
+                        dashboard dashObj = new dashboard();
+                        dashObj.Show();
+                        this.Close();
+                    }
+
+                    SqlConnection con2 = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=adminUsers;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+                    if (AdminUser.IsSelected)
+                    {
+                        try
+                        {
+                            con2.Open();
+                            String query = "select count(1) from adminUsers WHERE Username= @Username and Password = @Password";
+                            SqlCommand cmd = new SqlCommand(query, con2);
+                            cmd.CommandType = System.Data.CommandType.Text;
+                            cmd.Parameters.AddWithValue("@Username", con2);
+                            cmd.Parameters.AddWithValue("@Password", con2);
+                            int count = Convert.ToInt32(cmd.ExecuteScalar());
+                            if (count == 1)
+                            {
+                                MainWindow admin = new MainWindow();
+                                admin.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Log ind mislykkedes! Prøv igen!");
+                                Clear();
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Du er logget ind!");
+                            Clear();
+                            DashForAdmin newdash = new DashForAdmin();
+                            this.Close();
+
+                        }
+                    }
+                }
 
             }
-            finally
-            {
-                con.Close();
-                Clear();
-            }
+
+
+        
+
+
+    }
+
+    private void AdminUser_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
 
+    //{
+    //    SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=adminUsers;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
+    //    if (EmployBox.SelectedIndex==2)
+    //    {
+    //        try
+    //        {
+    //            con.Open();
+    //            String query = "select count(1) from adminUsers WHERE Username= @Username and Password = @Password";
+    //            SqlCommand cmd = new SqlCommand(query, con);
+    //            cmd.CommandType = System.Data.CommandType.Text;
+    //            cmd.Parameters.AddWithValue("@Username", con);
+    //            cmd.Parameters.AddWithValue("@Password", con);
+    //            int count = Convert.ToInt32(cmd.ExecuteScalar());
+    //            if (count == 1)
+    //            {
+    //                MainWindow admin = new MainWindow();
+    //                admin.Show();
+    //                this.Close();
+    //            }
+    //            else
+    //            {
+    //                MessageBox.Show("Log ind mislykkedes! Prøv igen!");
+    //                Clear();
+    //            }
+    //        }
+    //        catch (Exception)
+    //        {
+    //            MessageBox.Show("Du er logget ind!");
+    //            Clear();
+    //            DashForAdmin newdash = new DashForAdmin();
+    //            this.Close();
 
-        private void EmployBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            switch (EmployBox.SelectedItem)
-            {
-                case "Regular Users":
-                    dashboard dash = new dashboard();
-                    break;
-                case "Superusers":
-                    DashboardforSuper dash2 = new DashboardforSuper();
-                    break;
-                case "Admin Users":
-                    DashForAdmin dash3 = new DashForAdmin();
-                    break;
-                default:
-                    break;
-            }
-        
-      }
+    //        }
+    //    }
+    //}
+
+    private void Superuser_Selected(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void RegUser_Selected(object sender, RoutedEventArgs e)
+    {
+
+    }
+
     }
 }
+
+
+
+
+        //private void EmployBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    switch (EmployBox.SelectedItem)
+        //    {
+        //        case "Regular Users":
+        //            dashboard dash = new dashboard();
+        //            break;
+        //        case "Superusers":
+        //            DashboardforSuper dash2 = new DashboardforSuper();
+        //            break;
+        //        case "Admin Users":
+        //            DashForAdmin dash3 = new DashForAdmin();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+     
+
+
+
