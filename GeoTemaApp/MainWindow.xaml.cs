@@ -79,5 +79,26 @@ namespace GeoTemaApp
                 Clear();
             }
         }
+
+
+
+        private void EmployBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            switch (EmployBox.SelectedItem)
+            {
+                case "Regular Users":
+                    dashboard dash = new dashboard();
+                    break;
+                case "Superusers":
+                    DashboardforSuper dash2 = new DashboardforSuper();
+                    break;
+                case "Admin Users":
+                    DashForAdmin dash3 = new DashForAdmin();
+                    break;
+                default:
+                    break;
+            }
+        
+      }
     }
 }
