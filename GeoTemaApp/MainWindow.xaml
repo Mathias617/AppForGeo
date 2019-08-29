@@ -24,14 +24,6 @@
             <ComboBoxItem Margin="-3,0,3,0">Regular Users</ComboBoxItem>
             <ComboBoxItem>Superusers</ComboBoxItem>
             <ComboBoxItem>Admin Users</ComboBoxItem>
-            
-            
-            
-            
         </ComboBox>
-
-
-
-
     </Grid>
 </Window>
