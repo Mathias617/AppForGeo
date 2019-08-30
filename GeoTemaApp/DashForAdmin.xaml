@@ -11,6 +11,7 @@
         <Button x:Name="Show_data_table" Content="Show Data from Users" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="158" Click="Show_data_table_Click" Height="22"/>
         <Button x:Name="Data_table_superusers" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="290,37,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_superusers_Click"/>
         <Button x:Name="Data_table_Admin" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="290,64,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_Admin_Click"/>
+        <Button x:Name="Delete_button" Content="Delete Selected Row" HorizontalAlignment="Left" Margin="290,91,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Delete_button_Click"/>
 
     </Grid>
 

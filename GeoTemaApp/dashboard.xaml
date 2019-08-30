@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeoTemaApp"
         mc:Ignorable="d"
-        Title="dashboard" Height="450" Width="800">
+        Title="dashboard" Height="450" Width="673">
     <Grid>
-        <Label x:Name="DashRegular" Content="dashboard"/>
+        <Label x:Name="DashRegular" Margin="10"/>
+        <DataGrid x:Name="Table_data" HorizontalAlignment="Left" Height="399" Margin="240,10,0,0" VerticalAlignment="Top" Width="415" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button x:Name="Show_data_table" Content="Show Data from Users" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Show_data_table_Click"/>
+        <Button x:Name="Data_table_superusers" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Data_table_superusers_Click"/>
+        <Button x:Name="Data_table_Admin" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="80,60,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Data_table_Admin_Click"/>
     </Grid>
 </Window>

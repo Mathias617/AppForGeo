@@ -103,6 +103,23 @@ namespace GeoTemaApp
             }
         }
 
+        private void Delete_button_Click(object sender, RoutedEventArgs e)
+        {
+           SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            {
+                object item = Table_data.SelectedItem;
+                string CourseName = (Table_data.SelectedCells[0].Column.GetCellContent(item) as TextBlock).Text;
+                MessageBoxResult result = System.Windows.MessageBox.Show("Are you sure you want to delete this row?");
+                if (result == MessageBoxResult.OK)
+                {
+                    var itemSource = Table_data.ItemsSource as DataView;
+
+                    itemSource.Delete(Table_data.SelectedIndex);
+
+                    Table_data.ItemsSource = itemSource;
+                }
+            }
+        }
     }
 }
 

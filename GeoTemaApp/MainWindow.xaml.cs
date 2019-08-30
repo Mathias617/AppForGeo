@@ -107,7 +107,7 @@ namespace GeoTemaApp
                             Clear();
                             DashForAdmin newdash = new DashForAdmin();
                             newdash.Show();
-                            this.Close();
+                            this.Close();                                                     
                         }
                     }
                     else
@@ -148,10 +148,9 @@ namespace GeoTemaApp
                     }
                 }
             }
+           }
         }
     }
-}
-    
 
  
 
