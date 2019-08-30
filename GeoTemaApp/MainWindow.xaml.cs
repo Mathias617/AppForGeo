@@ -86,6 +86,7 @@ namespace GeoTemaApp
 
                     if (AdminUser.IsSelected)
                     {
+                       
                         try
                         {
                             con2.Open();
