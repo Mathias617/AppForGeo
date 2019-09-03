@@ -25,7 +25,7 @@ namespace GeoTemaApp
         {
             InitializeComponent();
         }
-
+        
         public void RegisterButton(object sender, RoutedEventArgs e)
         {
             Registration registrationObj = new Registration();
