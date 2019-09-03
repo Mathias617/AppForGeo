@@ -106,16 +106,16 @@ namespace GeoTemaApp
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = -Table_data2.SelectedItems.Count; i < Table_data2.SelectedItems.Count; i++)
+            //for (int i = -Table_data2.SelectedItems.Count; i < Table_data2.SelectedItems.Count; i++)
+            //{
+            //    Table_data2.SelectedItems.RemoveAt(Table_data2.SelectedIndex);
+            //}
+            if (Table_data2.SelectedItem != null)
             {
-                Table_data2.SelectedItems.RemoveAt(Table_data2.SelectedIndex);
+                ((DataRowView)(Table_data2.SelectedItem)).Row.Delete();
             }
 
 
-            //if (Table_data2.SelectedItem != null)
-            //{
-            //    ((DataRowView)(Table_data2.SelectedItem)).Row.Delete();
-            //}
 
         }
     }
