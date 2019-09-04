@@ -120,6 +120,13 @@ namespace GeoTemaApp
                 }
             }
         }
+
+        private void BackButt_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow main = new MainWindow();
+            main.Show();
+        }
     }
 }
 

@@ -12,5 +12,6 @@
         <Button x:Name="Show_data_table" Content="Show Data from Users" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Show_data_table_Click"/>
         <Button x:Name="Data_table_superusers" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="80,35,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Data_table_superusers_Click"/>
         <Button x:Name="Data_table_Admin" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="80,60,0,0" VerticalAlignment="Top" Width="155" FontFamily="Segoe UI Light" Click="Data_table_Admin_Click"/>
+        <Button x:Name="BackButt" Content="Back" HorizontalAlignment="Left" Margin="159,389,0,0" VerticalAlignment="Top" Width="76" Click="BackButt_Click"/>
     </Grid>
 </Window>

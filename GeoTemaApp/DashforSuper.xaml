@@ -8,14 +8,15 @@
         Title="Dashboard" Height="299.5" Width="475.378">
     <Grid x:Name="DashforSuper" Margin="0,0,2,6">
         <DataGrid x:Name="Table_data2" HorizontalAlignment="Left" Height="254" Margin="193,9,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="DataGrid_SelectionChanged">
-            
-            
+
+
         </DataGrid>
         <Button x:Name="Show_data_table2" Content="Show Data from Users" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Width="158" Click="Show_data_table_Click" Height="22"/>
         <Button x:Name="Data_table_superusers2" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_superusers_Click"/>
         <Button x:Name="Data_table_Admin2" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_Admin_Click"/>
         <Button x:Name="deleteButton" Content="Delete selected row" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="158" Click="DeleteButton_Click"/>
-        <Button x:Name="BackButt" Content="Back" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="75" Click="BackButt_Click"/>
+        <Button x:Name="BackButt" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="75" Click="BackButt_Click" Height="20" Content="Back">
+        </Button>
 
     </Grid>
 </Window>

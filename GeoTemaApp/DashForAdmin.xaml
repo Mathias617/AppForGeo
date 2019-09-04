@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeoTemaApp"
         mc:Ignorable="d"
-        Title="Dashboard" Height="450" Width="801.5" FontFamily="Segoe UI Light">
+        Title="Dashboard" Height="454" Width="464" FontFamily="Segoe UI Light">
     <Grid x:Name="DashforAdmin">
-        <DataGrid x:Name="Table_data" HorizontalAlignment="Left" Height="419" Margin="514,0,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="Table_data_SelectionChanged"/>
-        <Button x:Name="Show_data_table" Content="Show Data from Users" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Width="158" Click="Show_data_table_Click" Height="22"/>
-        <Button x:Name="Data_table_superusers" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="290,37,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_superusers_Click"/>
-        <Button x:Name="Data_table_Admin" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="290,64,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_Admin_Click"/>
-        <Button x:Name="Delete_button" Content="Delete Selected Row" HorizontalAlignment="Left" Margin="290,91,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Delete_button_Click"/>
+        <DataGrid x:Name="Table_data" HorizontalAlignment="Left" Height="419" Margin="173,0,0,0" VerticalAlignment="Top" Width="278" SelectionChanged="Table_data_SelectionChanged"/>
+        <Button x:Name="Show_data_table" Content="Show Data from Users" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="158" Click="Show_data_table_Click" Height="22"/>
+        <Button x:Name="Data_table_superusers" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_superusers_Click"/>
+        <Button x:Name="Data_table_Admin" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_Admin_Click"/>
+        <Button x:Name="Delete_button" Content="Delete Selected Row" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Delete_button_Click"/>
+        <Button x:Name="BackButt" Content="Back" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top" Width="75" Click="BackButt_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="158"/>
 
     </Grid>
 

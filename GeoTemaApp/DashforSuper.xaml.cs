@@ -124,6 +124,7 @@ namespace GeoTemaApp
             this.Hide();
             MainWindow main = new MainWindow();
             main.Show();
+            
         }
     }
 }
