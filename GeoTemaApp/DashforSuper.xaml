@@ -15,6 +15,7 @@
         <Button x:Name="Data_table_superusers2" Content="Show Data from Superusers" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_superusers_Click"/>
         <Button x:Name="Data_table_Admin2" Content="Show Data from Admins" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="158" Height="22" Click="Data_table_Admin_Click"/>
         <Button x:Name="deleteButton" Content="Delete selected row" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="158" Click="DeleteButton_Click"/>
+        <Button x:Name="BackButt" Content="Back" HorizontalAlignment="Left" Margin="10,233,0,0" VerticalAlignment="Top" Width="75" Click="BackButt_Click"/>
 
     </Grid>
 </Window>
