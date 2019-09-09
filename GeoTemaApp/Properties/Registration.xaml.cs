@@ -25,6 +25,7 @@ namespace GeoTemaApp.Properties
             InitializeComponent();
         }
 
+        //I min reg form har jeg har en knap funktion der gør, at de felter du har udfyldt i formen bliver smidt ind i en database, som så kan bruges til at logge ind på formen med. 
         private void RegisterButt_Click(object sender, RoutedEventArgs e)                
         {
             if (usernameBox.Text == "" || passwordBox.Text == "")
@@ -46,7 +47,8 @@ namespace GeoTemaApp.Properties
 
 
             }
-                
+            
+            //Her har min clear som resetter tekstboksene.
             void Clear()
             {
                 usernameBox.Text = passwordBox.Text = firstName.Text = eMail.Text = "";
@@ -57,7 +59,7 @@ namespace GeoTemaApp.Properties
               
 
         }
-
+        //Og min back button til at vende tilbage til MainWindow.
         private void BackButt_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();

@@ -21,12 +21,13 @@ namespace GeoTemaApp
 {
     public partial class MainWindow : Window
     {
-
+        //Her bliver MainWindow initialiseret
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        //Her siger jeg at hvis der bliver trykket på knappen Register, åbnes der en ny form hvor det er muligt at registrere sig som bruger.
         public void RegisterButton(object sender, RoutedEventArgs e)
         {
             Registration registrationObj = new Registration();
@@ -35,15 +36,21 @@ namespace GeoTemaApp
 
         }
 
+        //Her har jeg lavet en metode til at reset textboksene. Jeg kan så bruge denne metode hvor jeg vil, som f.eks når man har indtastet forkert Username eller Password så bliver de reset. 
         void Clear()
         {
             usernameBox.Text = passwordBox.Text = "";
         }
 
+        //Her er min login butt Click funktion. 
         private void LoginButt_Click(object sender, RoutedEventArgs e)
         {
+            //I første if kigger jeg i min combobox på formen MainWindow efter hvis Regular User er valgt. Hvis Regular user er valgt prøv dette hvis der bliver klikket på login.
             if (RegUser.IsSelected)
             {
+                //Det at min try/catch vil gøre er, at selecte det input der er kommet fra tekstboksene og derefter lede efter det i en lokal database. Hvis den kan finde de data der er blevet indtastet, login succesfuldt. Hvis ikke er det forkert Username og Password der er blevet indtastet.
+                //Det jeg har gjort her, er at jeg har lavet forskellige connectionstrings til min sql database(r) fordi at der er forskellige typer brugere at kunne logge ind med, og vær type har vær deres database.
+                //Så i den første connectionstring peger den på databasen Users, og min String Query udføre så denne query inde i den database!
                 try
                 {
                     SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -85,6 +92,7 @@ namespace GeoTemaApp
                 }
 
             }
+            //Nu er den første if blevet kørt igennem, og det gik helt fint. Men nu har jeg f.eks valgt at logge ind som Admin istedet for. Og her siger den så, at hvis RegUser/Superuser ikke er valgt, men AdminUser is selected. prøv noget. Det er det samme som ovenover, og det er også det samme som nedeunder, det eneste der er forskellen er at de peger på en forskellig database(r)
             else
             {
                 if (AdminUser.IsSelected)

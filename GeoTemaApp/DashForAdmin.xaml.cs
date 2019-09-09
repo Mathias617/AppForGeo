@@ -28,7 +28,11 @@ namespace GeoTemaApp
         {
             InitializeComponent();
         }
-
+        /* Her har jeg en button der skal vise data fra en tabel inde i selve appen, og i min form har jeg selvfølgelig tilføjet et datagrid hvor at data kan blive vist, også en knap for at få det hele frem i datagriddet.
+         * Og det har jeg så gjort for de forskellige buttons. Alle buttons har vær deres database de kigger i, og man kan så vælge at få vist information fra den ene tabel eller den anden. 
+         * Der er også en back button som går tilbage til MainWindow. 
+         * Her er der også en delete button, som så fjerner den valgte kolonne der er markeret.
+         */
         private void Table_data_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             

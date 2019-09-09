@@ -31,7 +31,12 @@ namespace GeoTemaApp
         {
 
         }
-
+        /* Her har jeg nogle buttons der skal vise data fra en tabel inde i selve appen, og i min form har jeg selvfølgelig tilføjet et datagrid hvor at data kan blive vist.
+         * Og det har jeg så gjort for de forskellige buttons. Alle buttons har vær deres database de kigger i, og man kan så vælge at få vist information fra den ene tabel eller den anden. 
+         * Der er også en back button som går tilbage til MainWindow. 
+         * 
+         * Her er der også en delete button, som så fjerner den valgte kolonne der er markeret. 
+         */
         private void Show_data_table_Click(object sender, RoutedEventArgs e)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Users;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
